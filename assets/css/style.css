@@ -4,7 +4,9 @@
 #studentTable tr:hover {
     background-color: #f2f2f2;
     transform: scale(1.02);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Amélioration hover */
 }
+
 #messageBox {
     display: none;
     padding: 10px;
@@ -12,6 +14,9 @@
     font-size: 14px;
     text-align: center;
     border-radius: 5px;
+    opacity: 0; /* Transition d'apparition */
+    transform: translateY(-10px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
 #messageBox.success {
@@ -24,6 +29,17 @@
     color: #721c24;
     background-color: #f8d7da;
     border-color: #f5c6cb;
+}
+
+#messageBox.show {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+#messageBox.hidden {
+    opacity: 0;
+    transform: translateY(-10px);
 }
 
 .search-container {
@@ -47,6 +63,10 @@
     box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
 }
 
+.search-container:hover .search-input {
+    background-color: #f9f9f9; /* Survol */
+}
+
 .search-icon {
     position: absolute;
     top: 50%;
@@ -55,8 +75,62 @@
     font-size: 1.2rem;
     color: #007bff;
 }
+
+.search-container:hover .search-icon {
+    color: #0056b3; /* Survol de l'icône */
+}
+
 #noResultsMessage {
     color: red;
     text-align: center;
     margin-top: 20px;
+}
+
+/* Boutons modernes */
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 14px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-primary {
+    background-color: #007bff;
+    color: #fff;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+}
+
+.btn-danger {
+    background-color: #dc3545;
+    color: #fff;
+}
+
+.btn-danger:hover {
+    background-color: #b52d3a;
+}
+div {
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    padding: 10px;
+    border-radius: 5px;
+    margin: 10px 0;
+}
+
+div[style='color: green;'] {
+    background-color: #d4edda;
+    border: 1px solid #c3e6cb;
+}
+
+div[style='color: red;'] {
+    background-color: #f8d7da;
+    border: 1px solid #f5c6cb;
 }

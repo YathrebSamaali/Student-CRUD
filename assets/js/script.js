@@ -103,28 +103,52 @@ $(document).ready(function () {
             });
         }
     });
-
-    // Fonction de recherche
-    $('#searchInput').on('input', function () {
-        let searchValue = $(this).val().toLowerCase();  // Récupérer la valeur de la recherche
-        let found = false;
-
-        // Parcourir chaque ligne du tableau pour vérifier les correspondances
-        $('#studentTable tr').each(function () {
-            let studentData = $(this).text().toLowerCase();  // Récupérer tout le texte de la ligne
-            if (studentData.indexOf(searchValue) > -1) {
-                $(this).show();  // Afficher la ligne si elle correspond
-                found = true;  // Indiquer qu'un résultat a été trouvé
-            } else {
-                $(this).hide();  // Cacher la ligne si elle ne correspond pas
-            }
+    $(document).ready(function () {
+        let searchTimeout;
+    
+        // Fonction de recherche
+        $('#searchInput').on('input', function () {
+            let searchValue = $(this).val().toLowerCase().trim();  // Récupérer la valeur de la recherche
+    
+            // Annuler la recherche précédente si elle existe
+            clearTimeout(searchTimeout);
+    
+            // Délai de recherche (debounce)
+            searchTimeout = setTimeout(function () {
+                let found = false;
+    
+                // Parcourir chaque ligne du tableau pour vérifier les correspondances
+                $('#studentTable tr').each(function () {
+                    let studentData = $(this).text().toLowerCase();  // Récupérer tout le texte de la ligne
+    
+                    // Si la ligne contient la valeur de recherche
+                    if (studentData.indexOf(searchValue) > -1) {
+                        $(this).show();  // Afficher la ligne si elle correspond
+                        found = true;
+    
+                        // Mettre en surbrillance le texte correspondant
+                        highlightSearchText($(this), searchValue);
+                    } else {
+                        $(this).hide();  // Cacher la ligne si elle ne correspond pas
+                    }
+                });
+    
+                // Afficher ou cacher le message "Aucun résultat trouvé"
+                if (!found && searchValue !== "") {
+                    $('#noResultsMessage').show();  // Afficher le message
+                } else {
+                    $('#noResultsMessage').hide();  // Cacher le message
+                }
+            }, 300); // Délai de 300ms pour éviter une recherche trop rapide
         });
-
-        // Afficher ou cacher le message "Aucun résultat trouvé"
-        if (!found && searchValue.trim() !== "") {
-            $('#noResultsMessage').show();  // Afficher le message
-        } else {
-            $('#noResultsMessage').hide();  // Cacher le message
+    
+        // Fonction pour mettre en surbrillance le texte correspondant
+        function highlightSearchText(row, searchValue) {
+            let rowHtml = row.html();
+            const regex = new RegExp(`(${searchValue})`, 'gi');  // Créer un regex pour correspondre au texte recherché
+            rowHtml = rowHtml.replace(regex, '<span class="highlight">$1</span>');  // Entourer les correspondances d'un span
+            row.html(rowHtml);  // Remplacer le HTML de la ligne
         }
     });
+    
 });

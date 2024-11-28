@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : jeu. 28 nov. 2024 à 15:54
+-- Généré le : jeu. 28 nov. 2024 à 17:59
 -- Version du serveur : 10.4.28-MariaDB
 -- Version de PHP : 8.2.4
 
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de données : `gestion_etudiants`
+-- Base de données : `student management`
 --
 
 -- --------------------------------------------------------
@@ -40,7 +40,14 @@ CREATE TABLE `students` (
 --
 
 INSERT INTO `students` (`id`, `nom`, `prenom`, `email`, `date_naissance`) VALUES
-(1, 'yathreb samaali', 'Yathreb', 'yathreb0303@gmail.com', '2002-02-05');
+(1, 'Dupont', 'Jean', 'jean.dupont@example.com', '1995-05-12'),
+(2, 'Durand', 'Marie', 'marie.durand@example.com', '1998-09-23'),
+(3, 'Moreau', 'Lucas', 'lucas.moreau@example.com', '1992-11-15'),
+(4, 'Martin', 'Clara', 'clara.martin@example.com', '1996-03-10'),
+(5, 'Bernard', 'Paul', 'paul.bernard@example.com', '1993-07-19'),
+(6, 'Petit', 'Sophie', 'sophie.petit@example.com', '2000-12-05'),
+(7, 'Roux', 'Nicolas', 'nicolas.roux@example.com', '1994-01-29'),
+(8, 'Lemoine', 'Emma', 'emma.lemoine@example.com', '1999-06-17');
 
 --
 -- Index pour les tables déchargées
@@ -60,7 +67,7 @@ ALTER TABLE `students`
 -- AUTO_INCREMENT pour la table `students`
 --
 ALTER TABLE `students`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
