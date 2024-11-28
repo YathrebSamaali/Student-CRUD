@@ -1,63 +1,63 @@
-# gestion des etudiants
+# Student Management
 
-**gestion des etudiants**  est une simple application web permettant de gérer les informations des étudiants. Elle inclut des fonctionnalités CRUD (Créer, Lire, Mettre à jour, Supprimer) et permet de rechercher des étudiants dans la base de données. Le projet intègre également une tâche d'IA pour l'analyse des données des étudiants.
+**Student Management** is a simple web application for managing student information. It includes CRUD (Create, Read, Update, Delete) functionalities and allows searching for students in the database. The project also integrates an AI feature for analyzing student data.
 
-## Capture d'écran
+## Screenshot
 
-Voici une capture d'écran de l'interface de l'application :
+Here is a screenshot of the application interface:
 
-![Capture d'écran de l'application de gestion des étudiants](assets/img/screenshot.png)
- 
-## Fonctionnalités
+![Screenshot of the Student Management application](assets/img/screenshot.png)
 
-- **CRUD des étudiants :**
-  - Ajouter un étudiant
-  - Afficher les étudiants
-  - Modifier les informations d'un étudiant
-  - Supprimer un étudiant
+## Features
 
-- **Recherche des étudiants :**
-  - Rechercher des étudiants par nom, prénom ou email en temps réel.
+- **Student CRUD:**
+  - Add a student
+  - Display students
+  - Edit student information
+  - Delete a student
 
-- **Tâche d'IA :**
-  - Fonction de Prédiction du Domaine d'Étude Basée sur le Prénom
+- **Student Search:**
+  - Search for students by name, first name, or email in real time.
 
-## Technologies utilisées
+- **AI Task:**
+  - Study Domain Prediction Based on First Name
 
-- **Frontend :**
+## Technologies Used
+
+- **Frontend:**
   - HTML
   - CSS (Bootstrap)
   - JavaScript (jQuery)
 
-- **Backend :**
+- **Backend:**
   - PHP
   - MySQL
 
-- **Base de données :**
+- **Database:**
   - MySQL
 
-- **Outils de développement :**
+- **Development Tools:**
   - XAMPP (Apache, PHP, MySQL)
-  - Visual Studio Code (éditeur de code)
+  - Visual Studio Code (code editor)
 
 ## Installation
 
-### Étapes pour exécuter le projet en local :
+### Steps to run the project locally:
 
-1. **Télécharger et installer XAMPP** :
-   - Télécharger XAMPP depuis [ici](https://www.apachefriends.org/index.html).
-   - Installer et démarrer Apache et MySQL via le panneau de contrôle XAMPP.
+1. **Download and install XAMPP:**
+   - Download XAMPP from [here](https://www.apachefriends.org/index.html).
+   - Install and start Apache and MySQL using the XAMPP control panel.
 
-2. **Clonez le projet** :
-   - Clonez ce repository sur votre machine :
+2. **Clone the project:**
+   - Clone this repository to your local machine:
      ```bash
      git clone https://github.com/YathrebSamaali/Student-CRUD.git
      ```
 
-3. **Configurer la base de données** :
-   - Ouvrez **phpMyAdmin** via `localhost/phpmyadmin` dans votre navigateur.
-   - Créez une nouvelle base de données appelée `student_management`.
-   - Exécutez le script SQL suivant pour créer la table des étudiants :
+3. **Configure the database:**
+   - Open **phpMyAdmin** via `localhost/phpmyadmin` in your browser.
+   - Create a new database called `student_management`.
+   - Run the following SQL script to create the students table:
      ```sql
      CREATE TABLE students (
          id INT AUTO_INCREMENT PRIMARY KEY,
@@ -68,15 +68,13 @@ Voici une capture d'écran de l'interface de l'application :
      );
      ```
 
-4. **Configurer la connexion à la base de données** :
-   - Dans le fichier `connect.php`, assurez-vous que les paramètres de connexion à la base de données sont corrects (par défaut : `localhost`, `root`, et mot de passe vide).
+4. **Configure the database connection:**
+   - In the `connect.php` file, make sure the database connection parameters are correct (default: `localhost`, `root`, and no password).
 
-5. **Démarrer le projet** :
-   - Déplacez le dossier du projet dans le répertoire `htdocs` de votre installation XAMPP (par défaut : `C:\xampp\htdocs\`).
-   - Ouvrez `http://localhost/Student-CRUD` dans votre navigateur pour accéder à l'application.
+5. **Start the project:**
+   - Move the project folder to the `htdocs` directory of your XAMPP installation (default: `C:\xampp\htdocs\`).
+   - Open `http://localhost/Student-CRUD` in your browser to access the application.
 
-
-## Auteur
+## Author
 
 - **Yathreb Samaali** - [GitHub](https://github.com/YathrebSamaali)
-
