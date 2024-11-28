@@ -1,0 +1,62 @@
+#studentTable tr {
+    transition: all 0.3s ease;
+}
+#studentTable tr:hover {
+    background-color: #f2f2f2;
+    transform: scale(1.02);
+}
+#messageBox {
+    display: none;
+    padding: 10px;
+    margin: 10px 0;
+    font-size: 14px;
+    text-align: center;
+    border-radius: 5px;
+}
+
+#messageBox.success {
+    color: #155724;
+    background-color: #d4edda;
+    border-color: #c3e6cb;
+}
+
+#messageBox.error {
+    color: #721c24;
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
+}
+
+.search-container {
+    position: relative;
+    width: 300px;
+    margin-bottom: 1rem;
+}
+
+.search-input {
+    width: 100%;
+    padding: 10px 40px 10px 15px; /* Ajouter de l'espace pour l'icône */
+    border-radius: 50px;
+    border: 1px solid #ddd;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.search-input:focus {
+    border-color: #007bff;
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+.search-icon {
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+    font-size: 1.2rem;
+    color: #007bff;
+}
+#noResultsMessage {
+    color: red;
+    text-align: center;
+    margin-top: 20px;
+}
