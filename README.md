@@ -6,7 +6,7 @@
 
 Here is a screenshot of the application interface:
 
-![Screenshot of the Student Management application](assets/img/screenshot.png)
+![Screenshot of the Student Management application](assets/img/img.png)
 
 ## Features
 
