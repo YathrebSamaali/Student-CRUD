@@ -39,3 +39,39 @@ Ce projet implémente un CRUD (Créer, Lire, Mettre à jour, Supprimer) pour gé
    python -m venv env
    source env/bin/activate       # Linux/Mac
    env\Scripts\activate          # Windows
+
+2. Installez Django et les dépendances nécessaires :
+
+   ```bash
+   pip install django
+
+---
+
+#### **b. Configuration du projet**
+1. clonez ou créez un nouveau projet Django :
+
+   ```bash
+   django-admin startproject article_management
+   cd article_management
+
+2. Créez une application Django pour la gestion des articles :
+
+   ```bash
+   python manage.py startapp blog
+
+3. Exécutez les migrations pour créer les tables de base de données :
+
+   ```bash
+   python manage.py migrate
+
+---
+
+#### **c. Lancer le serveur de développement**
+1. Exécutez le serveur Django :
+   
+   ```bash
+   python manage.py runserver
+2. Accédez au projet dans votre navigateur à l'adresse suivante :
+
+http://127.0.0.1:8000
+
